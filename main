@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=6
+#PBS -l vmem=16gb
+#PBS -l walltime=10:00:00
+
+#t1=`jq -r .t1 config.json`
+#t1=/home/david/Downloads/ds003
+export bids_dir=`jq -r '.bids_dir' config.json`
+mkdir out
+export out_dir=$PWD/out
+
+time singularity exec -e docker://davhunt/cmp-bidsapp:latest $bids_dir $out_dir group
