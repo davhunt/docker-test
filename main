@@ -10,6 +10,4 @@ mkdir out
 export out_dir=$PWD/out
 
 #time singularity exec -e docker://davhunt/testtest9:latest $bids_dir $out_dir group
-sudo docker run davhunt/testtest9:latest $bids_dir $out_dir group
-
-# merge into master
+sudo docker run davhunt/testtest9:latest $bids_dir $out_dir group # run docker
